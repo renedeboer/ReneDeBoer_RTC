@@ -20,17 +20,20 @@ if (sec_reg & 0x80) {
 }
 
 
-  // Lees secondenregister
-  uint8_t sec1 = readRegister(0x00) & 0x7F; // Mask CH-bit
-  delay(2000);
-  uint8_t sec2 = readRegister(0x00) & 0x7F;
+uint8_t sec1_bcd = readRegister(0x00) & 0x7F;
+delay(2000);
+uint8_t sec2_bcd = readRegister(0x00) & 0x7F;
 
-  Serial.print("Seconden na 2s: ");
-  Serial.print(bcdToDec(sec1));
-  Serial.print(" → ");
-  Serial.println(bcdToDec(sec2));
+uint8_t sec1 = bcdToDec(sec1_bcd);
+uint8_t sec2 = bcdToDec(sec2_bcd);
 
-  uint8_t diff = (sec2 + 60 - sec1) % 60;
+
+Serial.print("Seconden na 2s: ");
+Serial.print(sec1);
+Serial.print(" → ");
+Serial.println(sec2);
+
+uint8_t diff = (sec2 + 60 - sec1) % 60;
 
 if (diff >= 1 && diff <= 3) {
     Serial.println("✅ Klok loopt.");

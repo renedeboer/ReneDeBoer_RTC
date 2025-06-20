@@ -24,10 +24,10 @@ void setup() {
   delay(2000);
   uint8_t sec2 = bcdToDec(readRegister(0x80) & 0x7F);
 
-  Serial.print("Seconden na 2s: ");
-  Serial.print(bcdToDec(sec1));
-  Serial.print(" → ");
-  Serial.println(bcdToDec(sec2));
+Serial.print("Seconden na 2s: ");
+Serial.print(sec1);
+Serial.print(" → ");
+Serial.println(sec2);
 
   uint8_t diff = (sec2 + 60 - sec1) % 60;
 
