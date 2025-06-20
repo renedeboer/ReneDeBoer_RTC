@@ -9,6 +9,16 @@ void setup() {
   Serial.println("=== DS1307 Authenticiteitstest ===");
 
 delay(1000); // wacht 1 seconde
+// Controleer CH-bit en start klok indien nodig
+uint8_t sec_reg = readRegister(0x00);
+if (sec_reg & 0x80) {
+  Serial.println("⚠️ CH-bit is gezet. Klok staat stil. Start wordt geprobeerd...");
+  writeRegister(0x00, sec_reg & 0x7F); // CH-bit wissen → klok starten
+  delay(100); // even wachten op oscillator
+} else {
+  Serial.println("ℹ️ CH-bit is niet gezet. Klok zou moeten lopen.");
+}
+
 
   // Lees secondenregister
   uint8_t sec1 = readRegister(0x00) & 0x7F; // Mask CH-bit
