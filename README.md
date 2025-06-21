@@ -39,6 +39,12 @@ Je kunt elke digitale pin gebruiken, zolang ze maar consistent zijn met je code.
 
 ---
 
+## Tip voor het plaatsen van de CR2032-knoopcel
+
+Plaats de CR2032-batterij met de **pluskant (+) naar boven** in de houder. Druk de cel voorzichtig omlaag totdat hij stevig vastklikt. Zorg dat de batterij **pas wordt geplaatst nadat je de module hebt aangesloten** op je microcontroller, om kortsluiting of onbedoelde ontlading te voorkomen.
+
+> Let op: de batterij levert alleen back-upspanning voor de klokfunctie – je moet de module altijd apart voeden tijdens gebruik.
+
 ## Aansluitingsadviezen
 
 - Verbind altijd GND van RTC module en board met elkaar.  
