@@ -2,6 +2,8 @@
 
 Deze Arduino library ondersteunt zowel de DS1302 (3-draads interface) als de DS1307 (I2C) realtimeklokken zonder gebruik van externe libraries.
 
+Belangrijk: lees de [verkoopvoorwaarden](rtc_kit_verkoopvoorwaarden.md)
+
 ## Ondersteunde Boards
 
 - Arduino Uno, Nano, Mega, Leonardo  
@@ -48,25 +50,17 @@ Je kunt elke digitale pin gebruiken, zolang ze maar consistent zijn met je code.
 
 ## Voorbeelden
 
-### Arduino Uno DS1302
+Download het zip bestand en voeg deze toe aan de Arduino IDE
 
-DS1302 module Arduino Uno
+De volgende demo's zijn beschikbaar:
 
-VCC 5V
-GND GND
-RST Pin 6
-DAT Pin 8
-CLK Pin 7
-
-
-### Wemos D1 Mini DS1307
-
-DS1307 module Wemos D1 Mini
-
-VCC 3.3V
-GND GND
-SDA D2 (GPIO4)
-SCL D1 (GPIO5)
+- RamdumpDS1302
+- RamdumpDS1307 tonen de inhoud van het RAM geheugen via de Serial Monitor
+- CheckDS1307
+- CheckDS1302 testen de werking van de RTC chip en tonen de resultaten via de Serial Monitor
+- SetTimeRTC via de Serial Monitor is de datum/tijd in te stellen
+- PrintTimeRTC toon de tijd via de Serial Monitor
+- DisplayRTCTime_OLED toon de tijd op een Oled display (SSD1306 Adafruit library nodig)
 
 
 ---
