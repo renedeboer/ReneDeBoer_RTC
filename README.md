@@ -68,6 +68,7 @@ De volgende demo's zijn beschikbaar:
 - PrintTimeRTC toon de tijd via de Serial Monitor
 - DisplayRTCTime_OLED toon de tijd op een Oled display (SSD1306 Adafruit library nodig)
 
+Deze RTC-module is compatibel met de meeste Arduino-libraries die de DS1302 of DS1307 ondersteunen.
 
 ---
 
