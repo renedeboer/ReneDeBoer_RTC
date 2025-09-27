@@ -2,6 +2,19 @@
 
 Deze Arduino library ondersteunt zowel de DS1302 (3-draads interface) als de DS1307 (I2C) realtimeklokken zonder gebruik van externe libraries.
 
+# ⚙️ Belangrijkste verschillen
+
+| Kenmerk                | **DS1302**                               | **DS1307**                                |
+|------------------------|------------------------------------------|-------------------------------------------|
+| **Interface**          | Eigen **3-wire serial** (SCLK, I/O, CE)  | **I²C (TWI)**, standaard 2-draad          |
+| **Voeding backup**     | Ondersteunt batterij **of** supercap via `Vbat` | Alleen batterij via `Vbat`               |
+| **Spanningsbereik**    | **2,0 – 5,5 V** (werkt ook op 3,3 V)     | **4,5 – 5,5 V** (niet 3,3 V-compatibel!)  |
+| **Nauwkeurigheid**     | ± 1 min/maand typisch                    | ± 1 min/maand typisch                     |
+| **Temperatuurcompensatie** | ❌ Nee                                 | ❌ Nee                                    |
+| **RAM**                | 31 bytes SRAM ingebouwd                  | 56 bytes SRAM ingebouwd                   |
+| **Max. klokfrequentie** | ~ 2 MHz (sneller dan I²C bij lage adressen) | 100 kHz standaard I²C                     |
+| **Beschikbaarheid**    | Ouder, soms moeilijker te vinden, goedkoper | Heel gangbaar, vaak in modules te koop   |
+
 Belangrijk: lees de [verkoopvoorwaarden](rtc_kit_verkoopvoorwaarden.md)
 
 ## Ondersteunde Boards
@@ -23,7 +36,7 @@ Belangrijk: lees de [verkoopvoorwaarden](rtc_kit_verkoopvoorwaarden.md)
 | Wemos D1 Mini (ESP8266) | 3.3V  | GND   | D2 (GPIO4)    | D1 (GPIO5)    |                 |
 | Wemos D1 (ESP32)        | 3.3V  | GND   | GPIO21        | GPIO22        |                 |
 
-**Tip:** ESP boards werken op 3.3V. Controleer of je RTC module dit ondersteunt.
+**Tip:** ESP boards werken op 3.3V. Werk met een level-shifter.
 
 ---
 
