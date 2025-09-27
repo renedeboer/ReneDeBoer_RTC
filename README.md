@@ -13,7 +13,6 @@ Deze Arduino library ondersteunt zowel de DS1302 (3-draads interface) als de DS1
 | **Temperatuurcompensatie** | ❌ Nee                                 | ❌ Nee                                    |
 | **RAM**                | 31 bytes SRAM ingebouwd                  | 56 bytes SRAM ingebouwd                   |
 | **Max. klokfrequentie** | ~ 2 MHz (sneller dan I²C bij lage adressen) | 100 kHz standaard I²C                     |
-| **Beschikbaarheid**    | Ouder, soms moeilijker te vinden, goedkoper | Heel gangbaar, vaak in modules te koop   |
 
 Belangrijk: lees de [verkoopvoorwaarden](rtc_kit_verkoopvoorwaarden.md)
 
